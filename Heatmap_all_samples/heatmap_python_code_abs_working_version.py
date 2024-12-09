@@ -1,6 +1,7 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
 import argparse
 
 # Function to generate the heatmap
@@ -15,7 +16,7 @@ def generate_heatmap(file_path):
     heatmap_data = df.pivot(index="Signature", columns="Sample", values="Value")
 
     # Fill missing values with 0
-    heatmap_data.fillna(0, inplace=True)
+    heatmap_data.fillna(0, inplace=False)
 
     # Calculate row-wise sums (Signature-wise sums)
     row_sums = heatmap_data.sum(axis=1)
@@ -29,13 +30,17 @@ def generate_heatmap(file_path):
 
     # Sort heatmap_data by row sums (including the new 'Column Sums' row)
     heatmap_data = heatmap_data.loc[row_sums.sort_values(ascending=False).index]
-    
+
+    # Custom colormap: Set 0 values to black
+    cmap = sns.color_palette("YlGnBu", as_cmap=True)
+    cmap.set_under("black")
+
     # Plot the heatmap and the row sums
-    fig, ax = plt.subplots(figsize=(12, 6), ncols=3, gridspec_kw={'width_ratios': [4, 1, 1]})
+    fig, ax = plt.subplots(figsize=(36,12), ncols=3, gridspec_kw={'width_ratios': [4, 1, 1]})
 
     # Heatmap on the left
-    sns.heatmap(heatmap_data, annot=True, fmt=".0f", cmap="YlGnBu", cbar=True, linewidths=0.5, ax=ax[0])
-    ax[0].set_title("Heatmap of Signatures Across Samples (Sorted by Row Sum)")
+    sns.heatmap(heatmap_data, annot=False, fmt=".0f", cmap=cmap, cbar=True, linewidths=0.5, ax=ax[0], vmin=0.1)
+    ax[0].set_title("Heatmap of Signatures Across Samples (Sorted by Row Sum)  AF <.30")
     ax[0].set_ylabel("Signature")
     ax[0].set_xlabel("Samples")
 
@@ -44,8 +49,8 @@ def generate_heatmap(file_path):
     ax[1].set_title("Row Sums")
     ax[1].set_xlabel("Sum")
     ax[1].set_ylabel("")  # No need for a label as it corresponds to the same y-axis
-    ax[1].set_xticklabels(ax[1].get_xticklabels(), rotation=90)
-    plt.tight_layout()
+# Ensure x-axis tick labels display normal values and are horizontal
+    ax[1].set_xticklabels(ax[1].get_xticks(), rotation=90, fontsize=10)
 
     # Optional: Manually adjust padding for better spacing
     plt.subplots_adjust(right=0.85)  # Increase this to create more space on the right side
@@ -57,20 +62,19 @@ def generate_heatmap(file_path):
     ax[2].set_ylabel("Sum")
 
     # Add annotations to the column sums bars
-    for p in ax[2].patches:
-        ax[2].annotate(f'{p.get_height():.0f}', 
-                       (p.get_x() + p.get_width() / 2., p.get_height()), 
-                       ha='center', va='center', fontsize=8, color='black', 
-                       xytext=(0, 10), textcoords='offset points',rotation=90)
+    # for p in ax[2].patches:
+    #     ax[2].annotate(f'{p.get_height():.0f}', 
+    #                    (p.get_x() + p.get_width() / 2., p.get_height()), 
+    #                    ha='center', va='center', fontsize=8, color='black', 
+    #                    xytext=(0, 10), textcoords='offset points', rotation=90)
 
     # Rotate x-axis labels to make them vertical
-    ax[2].set_xticklabels(ax[2].get_xticklabels(), rotation=90)
+    ax[2].set_xticklabels(ax[2].get_xticklabels(), rotation=90, fontsize=4)
 
-    # Adjust layout
+    # Save the figure
     plt.tight_layout()
-    plt.figure(figsize=(48, 24))
-
-    plt.show()
+    plt.savefig("heatmap_with_black_cells.jpg", dpi=300)
+    plt.close()
 
 # Main function to handle command-line arguments
 def main():
