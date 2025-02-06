@@ -1,9 +1,5 @@
-.~lock.all_csv.csv#
-Cavernoma/
-Cosine_SIM/
-Ependymoma_results/
-HGG_VCF_Filteted_Less_30/
-Pituitary_Adenomas/
-mut_sig_WGS_blood_HGG/
-
-
+*
+!Plot_analysis_generator/
+!Plot_analysis_generator/**
+!Heatmap_generator/
+!Heatmap_generator/**

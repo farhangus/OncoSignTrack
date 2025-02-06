@@ -11,7 +11,7 @@ def generate_sorted_combined_boxplot(file_path):
 
     # Convert the Value column to numeric (in case it's read as a string)
     df["Value"] = pd.to_numeric(df["Value"], errors="coerce")
-
+    print(df)
     # Calculate the maximum value for each sample
     max_values = df.groupby("Sample")["Value"].max()
 
@@ -48,7 +48,7 @@ def generate_sorted_combined_boxplot(file_path):
         plt.scatter(x_coords, data, color="black", s=20, alpha=0.8, zorder=3)
 
     # Customize the plot
-    plt.title("Box Plot of Values for All Sample Types SBS5(Sorted by Max Value)", fontsize=18)
+    plt.title("Box Plot of Values for All Sample Types SBS5 (Sorted by Max Value)", fontsize=18)
     plt.xlabel("Sample Type", fontsize=14)
     plt.ylabel("Value", fontsize=14)
     plt.xticks(range(num_samples), sorted_samples, rotation=45, fontsize=12)  # Add sample names as x-ticks

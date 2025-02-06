@@ -1,0 +1,1 @@
+grep -F -f list CBTN_Calgary_AF_less_30.csv 

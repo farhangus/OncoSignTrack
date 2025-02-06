@@ -1,0 +1,11 @@
+Signature,Lung Cancer,Colorectal Cancer,Breast Cancer,Melanoma
+SBS1,0.8,0,0.9,0.4
+SBS2,0.5,0.4,0.7,0.2
+SBS3,0.3,0.2,0.8,0.5
+SBS4,0.6,0.1,0.2,0.7
+SBS5,0.7,0.5,0.6,0.3
+SBS6,0.4,0.7,0.3,0.6
+SBS7a,0.1,0.2,0.1,0.9
+SBS7b,0.2,0.3,0.2,0.8
+SBS8,0.6,0.5,0.4,0.4
+
