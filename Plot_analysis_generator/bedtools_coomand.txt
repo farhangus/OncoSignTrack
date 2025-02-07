@@ -1,0 +1,3 @@
+bcftools view -h SM_2819_variants_SNVs.vcf.gz > filtered_header.vcf && bcftools view -H SM_2819_variants_SNVs.vcf.gz | awk '{print $1, $2-1, $2, $0}' OFS="\t" | bedtools intersect -v -a stdin -b ../../Gene_AF/CrHG38_common_SNPs_exons_beds/common_SNPs.bed | cut -f4- >> filtered_header.vcf && bgzip -c filtered_header.vcf > SM_2819_variants_filtered.vcf.gz
+
+
