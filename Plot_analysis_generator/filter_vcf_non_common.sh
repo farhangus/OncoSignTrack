@@ -1,37 +1,39 @@
 #!/bin/bash
 
-# Check if the input VCF file is provided
-if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <input_vcf.gz>"
+# Check if correct arguments are given
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <input.vcf.gz> <input.bed>"
     exit 1
 fi
 
-# Input VCF file
-input_vcf="$1"
+# Get input VCF and BED file
+VCF_FILE="$1"
+BED_FILE="$2"
 
-# Define the BED file path
-bed_file="../../Projects/Gene_AF/CrHG38_common_SNPs_exons_beds/common_SNPs.bed"
+# Get directory and base name of the VCF file
+VCF_DIR=$(dirname "$VCF_FILE")
+VCF_BASENAME=$(basename "$VCF_FILE" .vcf.gz)
 
-# Extract the base name of the input file to create the output file name
-base_name=$(basename "$input_vcf" .vcf.gz)
-output_vcf="${base_name}_final_filtered.vcf.gz"
+# Define output file name
+OUTPUT_VCF="${VCF_DIR}/${VCF_BASENAME}_filtered.vcf.gz"
 
-# Temporary file for storing intermediate data
-temp_body_file="${base_name}_body.tmp"
-temp_header_file="${base_name}_header.tmp"
+# Create a temporary header file
+HEADER_TMP=$(mktemp)
 
-# Step 1: Extract the VCF header
-bcftools view -h "$input_vcf" > "$temp_header_file"
+# Extract header from the VCF file
+zgrep "^#" "$VCF_FILE" > "$HEADER_TMP"
 
-# Step 2: Remove variants overlapping with the BED file
-bedtools intersect -v -a "$input_vcf" -b "$bed_file" > "$temp_body_file"
+# Use bedtools subtract to remove variants present in the BED file 
+bedtools subtract -A -a "$VCF_FILE" -b "$BED_FILE" | grep -v "^#" > "${VCF_BASENAME}_filtered_body.vcf"
 
-# Step 3: Append the extracted variants to the header and compress
-cat "$temp_header_file" "$temp_body_file" | bgzip -c > "$output_vcf"
+# Combine header and filtered body into a new VCF file
+cat "$HEADER_TMP" "${VCF_BASENAME}_filtered_body.vcf" | bgzip -c > "$OUTPUT_VCF"
 
-# Step 4: Cleanup intermediate files
-rm -f "$temp_header_file" "$temp_body_file"
+# Index the new VCF file
+tabix -p vcf "$OUTPUT_VCF"
 
-# Step 5: Notify the user
-echo "Filtered VCF file (no overlaps) created: $output_vcf"
+# Clean up temporary files
+rm -f "$HEADER_TMP" "${VCF_BASENAME}_filtered_body.vcf"
+
+echo "Filtered VCF saved as: $OUTPUT_VCF"
 
