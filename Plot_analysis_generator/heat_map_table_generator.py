@@ -2,9 +2,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
+import os
 
 # Read the input file from the command line
 input_file = sys.argv[1]
+
+# Get the directory where the input file is located
+output_dir = os.path.dirname(os.path.abspath(input_file))
 
 # Load your data into a DataFrame
 data = pd.read_csv(input_file, index_col=0)
@@ -76,8 +80,10 @@ cbar = fig.colorbar(sm, ax=ax, orientation="vertical", label="Proportion Value",
 # Tight layout to adjust spacing
 plt.tight_layout()
 
-# Save the main heatmap plot
-plt.savefig('heatmap_samples_with_counts.png')
+# Save the main heatmap plot in the same directory as the input file
+heatmap_path = os.path.join(output_dir, 'heatmap_samples_with_counts.png')
+plt.savefig(heatmap_path)
+print(f"✅ Heatmap saved to: {heatmap_path}")
 
 # Create a separate figure for the circle size legend
 fig_legend, ax_legend = plt.subplots(figsize=(4, 4))
@@ -107,6 +113,8 @@ ax_legend.legend(
 )
 ax_legend.axis("off")  # Hide axes for the legend figure
 
-# Save the circle size legend as a separate image
+# Save the circle size legend as a separate image in the same directory as the input file
+legend_path = os.path.join(output_dir, 'circle_size_legend_with_colors.png')
 plt.tight_layout()
-plt.savefig('circle_size_legend_with_colors.png')
+plt.savefig(legend_path)
+print(f"✅ Legend saved to: {legend_path}")
