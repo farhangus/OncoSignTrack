@@ -57,7 +57,7 @@ def fetch_aetiology(sbs):
 
         # Print the extracted details
         print(f"{sbs} Aetiology: {aetiology}\n")
-        print(f"{sbs} Associated Aetiology: {associated_aetiology}\n")
+        print(f"{sbs} Seccond Aetiology: {associated_aetiology}\n")
     else:
         print(f"❌ Could not retrieve {sbs}. Status code: {response.status_code}")
     print ("-----------------------------------------------------------------------------------------------------------")
