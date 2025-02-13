@@ -56,10 +56,11 @@ def fetch_aetiology(sbs):
         associated_aetiology = aetiology_td.get_text(separator=" ", strip=True) if aetiology_td else "Unknown"
 
         # Print the extracted details
-        print(f"📌 {sbs} Aetiology: {aetiology}\n")
-        print(f"🔗 {sbs} Associated Aetiology: {associated_aetiology}\n")
+        print(f"{sbs} Aetiology: {aetiology}\n")
+        print(f"{sbs} Associated Aetiology: {associated_aetiology}\n")
     else:
         print(f"❌ Could not retrieve {sbs}. Status code: {response.status_code}")
+    print ("-----------------------------------------------------------------------------------------------------------")
 
 # Loop through each SBS signature
 for sbs in sbs_list:
