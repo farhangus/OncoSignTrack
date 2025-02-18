@@ -1,0 +1,385 @@
+✅ Found SBS1 at https://cancer.sanger.ac.uk/signatures/sbs/sbs1
+📄 Saved SBS1 page as SBS1.html
+SBS1 Aetiology: An endogenous mutational process initiated by spontaneous or enzymatic deamination of 5-methylcytosine to thymine which generates G:T mismatches in double stranded DNA. Failure to detect and remove these mismatches prior to DNA replication results in fixation of the T substitution for C. 
+***Comments: Signature SBS1 is clock-like in that the number of mutations in most cancers and normal cells correlates with the age of the individual. Rates of acquisition of Signature SBS1 mutations over time differ markedly between different cancer types and different normal cell types. These differences correlate with estimated rates of stem cell division in different tissues and Signature SBS1 may therefore be a cell division/mitotic clock.
+
+SBS1 Second Aetiology: Spontaneous deamination of 5-methylcytosine
+
+SBS1 Associated Signatures: The activity of SBS1 is closely correlated with the activity of SBS5 within many types of cancer. However, between cancer types, mutation burdens of SBS1 and SBS5 do not clearly correlate consistent with them being due to different underlying processes.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS10a at https://cancer.sanger.ac.uk/signatures/sbs/sbs10a
+📄 Saved SBS10a page as SBS10a.html
+SBS10a Aetiology: Polymerase epsilon exonuclease domain mutations. 
+***Comments: SBS10a/ SBS10b usually generate large numbers of somatic mutations (>100 mutations per MB) and samples with these signatures have been termed hypermutators.
+
+SBS10a Second Aetiology: POLE exonuclease domain mutation
+
+SBS10a Associated Signatures: SBS10a is associated with SBS10b and SBS28 and these signatures are commonly found in the same samples. DBS3 is also associated with SBS10a/ SBS10b .
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS10b at https://cancer.sanger.ac.uk/signatures/sbs/sbs10b
+📄 Saved SBS10b page as SBS10b.html
+SBS10b Aetiology: Polymerase epsilon exonuclease domain mutations. 
+***Comments: Signature SBS10a /SBS10b usually generate large numbers of somatic mutations (>100 mutations per MB) and samples with these signatures have been termed hypermutators.
+
+SBS10b Second Aetiology: POLE exonuclease domain mutation
+
+SBS10b Associated Signatures: SBS10b is associated with SBS10a and SBS28 and these signatures are commonly found in the same samples. DBS3 is also associated with SBS10a /SBS10b.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS10d at https://cancer.sanger.ac.uk/signatures/sbs/sbs10d
+📄 Saved SBS10d page as SBS10d.html
+SBS10d Aetiology: Adenoma from individuals with germline POLD1 exonuclease domain mutations. 
+***Comments: Strong lagging replication strand bias. Enriched in non-coding genome (intergenic and intronic) regions.
+
+SBS10d Second Aetiology: Defective POLD1 proofreading
+
+SBS10d Associated Signatures: Associated with SBS10c and ID1 .
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS11 at https://cancer.sanger.ac.uk/signatures/sbs/sbs11
+📄 Saved SBS11 page as SBS11.html
+SBS11 Aetiology: SBS11 exhibits a mutational pattern resembling that of alkylating agents. Patient histories indicate an association between previous treatment with the alkylating agent temozolomide and SBS11 mutations. 
+***Comments: SBS11 usually generates large numbers of somatic mutations (>10 mutations per MB).
+
+SBS11 Second Aetiology: Temozolomide chemotherapy / MMR deficiency + temozolomide
+
+SBS11 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS12 at https://cancer.sanger.ac.uk/signatures/sbs/sbs12
+📄 Saved SBS12 page as SBS12.html
+SBS12 Aetiology: Unknown. 
+***Comments: SBS12 usually contributes a small percentage (<20%) of the mutations observed in liver cancer samples.
+
+SBS12 Second Aetiology: Unknown
+
+SBS12 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS13 at https://cancer.sanger.ac.uk/signatures/sbs/sbs13
+📄 Saved SBS13 page as SBS13.html
+SBS13 Aetiology: Attributed to activity of the AID/APOBEC family of cytidine deaminases on the basis of similarities in the sequence context of cytosine mutations caused by APOBEC enzymes in experimental systems. APOBEC3A is probably responsible for most mutations in human cancer, although APOBEC3B may also contribute (these differ in the sequence context two bases 5’ to the mutated cytosine, see 1536 mutation classification signature extraction). SBS13 mutations are likely generated by error prone polymerases (such as REV1) replicating across abasic sites generated by base excision repair removal of uracil. 
+***Comments: SBS13 is usually found in the same samples as SBS2 . It has been proposed that activation of AID/APOBEC cytidine deaminases in cancer may be due to previous viral infection, retrotransposon jumping, or tissue inflammation. Currently, there is limited evidence to support these hypotheses. Germline polymorphisms involving APOBEC3A and APOBEC3B are associated with predisposition to breast and bladder cancer as well as with mutation burdens of SBS2 and SBS13. Mutations of similar patterns to SBS2 and SBS13 are commonly found in the phenomenon of local hypermutation present in some cancers, known as kataegis, implicating AID/APOBEC enzymes in this process as well. 
+
+SBS13 Second Aetiology: APOBEC activity
+
+SBS13 Associated Signatures: SBS13 is closely associated with SBS2 . SBS13 is also associated with DBS11 , which is characterised predominantly by CC>TT doublet base substitutions as well as other CC>NN doublet base substitutions.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS17a at https://cancer.sanger.ac.uk/signatures/sbs/sbs17a
+📄 Saved SBS17a page as SBS17a.html
+SBS17a Aetiology: Unknown.
+
+SBS17a Second Aetiology: Damage by ROS
+
+SBS17a Associated Signatures: SBS17a is associated with SBS17b and these signatures are commonly found in the same samples.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS17b at https://cancer.sanger.ac.uk/signatures/sbs/sbs17b
+📄 Saved SBS17b page as SBS17b.html
+SBS17b Aetiology: In the vast majority of tumours the aetiology is unknown. However, in some cases, previous studies have associated SBS17b to fluorouracil (5FU) chemotherapy treatment and to damage inflicted by reactive oxygen species. 
+***Comments: SBS17b has similarities to SBS28 and these two signatures can be mistaken for one another.
+
+SBS17b Second Aetiology: Damage by ROS / 5FU chemotherapy
+
+SBS17b Associated Signatures: SBS17b is associated with SBS17a and these signatures are commonly found in the same samples.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS18 at https://cancer.sanger.ac.uk/signatures/sbs/sbs18
+📄 Saved SBS18 page as SBS18.html
+SBS18 Aetiology: Possibly damage by reactive oxygen species. 
+***Comments: Similar in profile to SBS36 which is associated with defective base excision repair due to MUTYH mutations.
+
+SBS18 Second Aetiology: Damage by ROS
+
+SBS18 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS19 at https://cancer.sanger.ac.uk/signatures/sbs/sbs19
+📄 Saved SBS19 page as SBS19.html
+SBS19 Aetiology: Unknown.
+
+SBS19 Second Aetiology: Unknown
+
+SBS19 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS2 at https://cancer.sanger.ac.uk/signatures/sbs/sbs2
+📄 Saved SBS2 page as SBS2.html
+SBS2 Aetiology: Attributed to activity of the AID/APOBEC family of cytidine deaminases on the basis of similarities in the sequence context of cytosine mutations caused by APOBEC enzymes in experimental systems. APOBEC3A is probably responsible for most mutations in human cancer, although APOBEC3B may also contribute (these differ in the sequence context two bases 5’ to the mutated cytosine, see 1,536 mutation classification signature extraction). SBS2 mutations may be generated directly by DNA replication across uracil or by error prone polymerases replicating across abasic sites generated by base excision repair removal of uracil. 
+***Comments: SBS2 is usually found in the same samples as SBS13 . It has been proposed that activation of AID/APOBEC cytidine deaminases in cancer may be due to previous viral infection, retrotransposon jumping, or tissue inflammation. Currently, there is limited evidence to support these hypotheses. Germline polymorphisms involving APOBEC3A and APOBEC3B are associated with predisposition to breast and bladder cancer as well as with mutation burdens of SBS2 and SBS13 . Mutations of similar patterns to SBS2 and SBS13 are commonly found in the phenomenon of local hypermutation present in some cancers, known as kataegis, implicating AID/APOBEC enzymes in this process as well.
+
+SBS2 Second Aetiology: APOBEC activity
+
+SBS2 Associated Signatures: SBS2 is closely associated with SBS13 . SBS2 is also associated with DBS11 , which is characterised predominantly by CC>TT doublet base substitutions as well as other CC>NN doublet base substitutions.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS22 at https://cancer.sanger.ac.uk/signatures/sbs/sbs22
+📄 Saved SBS22 page as SBS22.html
+SBS22 Aetiology: Aristolochic acid exposure. Found in cancer samples with known exposures to aristolochic acid and the pattern of mutations exhibited by the signature is consistent with that observed in experimental systems of aristolochic acid exposure.
+
+SBS22 Second Aetiology: Aristolochic acid exposure
+
+SBS22 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS24 at https://cancer.sanger.ac.uk/signatures/sbs/sbs24
+📄 Saved SBS24 page as SBS24.html
+SBS24 Aetiology: Aflatoxin exposure. SBS24 has been found in cancer samples with known exposures to aflatoxin and the pattern of mutations exhibited by the signature is consistent with that observed in experimental systems exposed to aflatoxin.
+
+SBS24 Second Aetiology: Aflatoxin exposure
+
+SBS24 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS25 at https://cancer.sanger.ac.uk/signatures/sbs/sbs25
+📄 Saved SBS25 page as SBS25.html
+SBS25 Aetiology: Unknown. However, some Hodgkin’s cell line samples in which the signature has been found were from patients exposed to chemotherapy and it is possible that SBS25 is due to chemotherapy treatment. 
+***Comments: This signature has only been identified in Hodgkin’s cell lines. Data is not available from primary Hodgkin lymphomas.
+
+SBS25 Second Aetiology: Unknown chemotherapy
+
+SBS25 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS26 at https://cancer.sanger.ac.uk/signatures/sbs/sbs26
+📄 Saved SBS26 page as SBS26.html
+SBS26 Aetiology: Defective DNA mismatch repair. 
+***Comments: SBS26 is one of seven mutational signatures associated with defective DNA mismatch repair and microsatellite instability (MSI) and is often found in the same samples as other MSI associated signatures: SBS6 , SBS14 , SBS15 , SBS20 , SBS21 , and SBS44 .
+
+SBS26 Second Aetiology: MMR deficiency
+
+SBS26 Associated Signatures: SBS26 is associated ID1 and ID2 .
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS28 at https://cancer.sanger.ac.uk/signatures/sbs/sbs28
+📄 Saved SBS28 page as SBS28.html
+SBS28 Aetiology: Unknown. 
+***Comments: SBS28 has similarities to SBS17b and these two signatures can be mistaken for one another. Signature SBS28 is found in most samples with SBS10a / SBS10b where it contributes very high numbers of mutations. In contrast, SBS28 contributes much smaller number of mutations in samples lacking SBS10a / SBS10b .
+
+SBS28 Second Aetiology: POLE exonuclease domain mutation
+
+SBS28 Associated Signatures: SBS28 is found in most samples with SBS10a / SBS10b .
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS29 at https://cancer.sanger.ac.uk/signatures/sbs/sbs29
+📄 Saved SBS29 page as SBS29.html
+SBS29 Aetiology: SBS29 has been found in cancer samples from individuals with a tobacco chewing habit. 
+***Comments: The pattern of C>A mutations in SBS29 appears different from the pattern of mutations due to tobacco smoking reflected by SBS4 .
+
+SBS29 Second Aetiology: Tobacco chewing
+
+SBS29 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS3 at https://cancer.sanger.ac.uk/signatures/sbs/sbs3
+📄 Saved SBS3 page as SBS3.html
+SBS3 Aetiology: Defective homologous recombination-based DNA damage repair which manifests predominantly as small indels and genome rearrangements due to abnormal double strand break repair but also in the form of this base substitution signature. 
+***Comments: SBS3 is strongly associated with germline and somatic BRCA1 and BRCA2 mutations and BRCA1 promoter methylation in breast, pancreatic, and ovarian cancers. In pancreatic cancer, responders to platinum therapy usually exhibit SBS3 mutations. Together with associated indel and rearrangement signatures, SBS3 has been proposed as a predictor of defective homologous recombination-based repair and thus of response to therapies exploiting this repair defect.
+
+SBS3 Second Aetiology: HR deficiency
+
+SBS3 Associated Signatures: Associated with ID6 , characterised by small deletions of >5bp with extended stretches of overlapping microhomology at breakpoint junctions. Also associated with signatures DBS13 , CN17 , and SV3 , as well as short tandem duplications (1-10kb), longer tandem duplications (>100kb), and deletions (1-10kb).
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS30 at https://cancer.sanger.ac.uk/signatures/sbs/sbs30
+📄 Saved SBS30 page as SBS30.html
+SBS30 Aetiology: SBS30 is due to deficiency in base excision repair due to inactivating mutations in NTHL1 .
+
+SBS30 Second Aetiology: BER deficiency
+
+SBS30 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS32 at https://cancer.sanger.ac.uk/signatures/sbs/sbs32
+📄 Saved SBS32 page as SBS32.html
+SBS32 Aetiology: Prior treatment with azathioprine to induce immunosuppression.
+
+SBS32 Second Aetiology: Azathioprine exposure
+
+SBS32 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS33 at https://cancer.sanger.ac.uk/signatures/sbs/sbs33
+📄 Saved SBS33 page as SBS33.html
+SBS33 Aetiology: Unknown.
+
+SBS33 Second Aetiology: Unknown
+
+SBS33 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS34 at https://cancer.sanger.ac.uk/signatures/sbs/sbs34
+📄 Saved SBS34 page as SBS34.html
+SBS34 Aetiology: Unknown.
+
+SBS34 Second Aetiology: Unknown
+
+SBS34 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS37 at https://cancer.sanger.ac.uk/signatures/sbs/sbs37
+📄 Saved SBS37 page as SBS37.html
+SBS37 Aetiology: Unknown.
+
+SBS37 Second Aetiology: Unknown
+
+SBS37 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS38 at https://cancer.sanger.ac.uk/signatures/sbs/sbs38
+📄 Saved SBS38 page as SBS38.html
+SBS38 Aetiology: Unknown. Found only in ultraviolet light associated melanomas suggesting potential indirect damage from UV-light.
+
+SBS38 Second Aetiology: UV light exposure (indirect effect)
+
+SBS38 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS39 at https://cancer.sanger.ac.uk/signatures/sbs/sbs39
+📄 Saved SBS39 page as SBS39.html
+SBS39 Aetiology: Unknown.
+
+SBS39 Second Aetiology: Unknown
+
+SBS39 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS40 at https://cancer.sanger.ac.uk/signatures/sbs/sbs40
+📄 Saved SBS40 page as SBS40.html
+SBS40 Aetiology: Unknown. 
+***Comments: Numbers of mutations attributed to SBS40 are correlated with patients’ ages for some types of human cancer.
+
+SBS40 Second Aetiology: Unknown
+
+SBS40 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS44 at https://cancer.sanger.ac.uk/signatures/sbs/sbs44
+📄 Saved SBS44 page as SBS44.html
+SBS44 Aetiology: Defective DNA mismatch repair. 
+***Comments: SBS44 is one of seven mutational signatures associated with defective DNA mismatch repair and microsatellite instability (MSI) and is often found in the same samples as other MSI associated signatures: SBS6 , SBS14 , SBS15 , SBS20 , SBS21 , and SBS26 .
+
+SBS44 Second Aetiology: MMR deficiency
+
+SBS44 Associated Signatures: SBS44 is associated with ID1 and ID2 .
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS5 at https://cancer.sanger.ac.uk/signatures/sbs/sbs5
+📄 Saved SBS5 page as SBS5.html
+SBS5 Aetiology: Unknown. SBS5 mutational burden is increased in bladder cancer samples with ERCC2 mutations and in many cancer types due to tobacco smoking. 
+***Comments: SBS5 is clock-like in that the number of mutations in most cancers and normal cells correlates with the age of the individual. Rates of acquisition of SBS5 mutations over time differ between different cancer types and different normal cell types. These differences do not clearly correlate with estimated rates of stem cell division in different tissues nor with differences in SBS1 mutation rates. SBS5 may be contaminated by SBS16 .
+
+SBS5 Second Aetiology: Aging / Tobacco smoking / NER deficiency
+
+SBS5 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS6 at https://cancer.sanger.ac.uk/signatures/sbs/sbs6
+📄 Saved SBS6 page as SBS6.html
+SBS6 Aetiology: SBS6 is associated with defective DNA mismatch repair and is found in microsatellite unstable tumours. 
+***Comments: SBS6 is one of seven mutational signatures associated with defective DNA mismatch repair and microsatellite instability (MSI), and is often found in the same samples as other MSI associated signatures: SBS14 , SBS15 , SBS20 , SBS21 , SBS26 , and SBS44 .
+
+SBS6 Second Aetiology: MMR deficiency
+
+SBS6 Associated Signatures: SBS6 is associated with large numbers of ID1 and ID2 mutations, which are characterised respectively by small (usually 1bp) insertions and deletions of T at mononucleotide T repeats.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS7b at https://cancer.sanger.ac.uk/signatures/sbs/sbs7b
+📄 Saved SBS7b page as SBS7b.html
+SBS7b Aetiology: SBS7a /SBS7b/ SBS7c / SBS7d are found in cancers of the skin from sun exposed areas and are likely to be due to exposure to ultraviolet light. SBS7b may possibly be the consequence of just one of the two major known UV photoproducts, cyclobutane pyrimidine dimers or 6-4 photoproducts. However, there is no evidence for this hypothesis and it is unclear which of these photoproducts may be responsible for SBS7b.
+
+SBS7b Second Aetiology: UV light exposure
+
+SBS7b Associated Signatures: SBS7b is associated with SBS7a / SBS7c / SBS7d and these signatures are commonly found in the same samples. SBS7b is associated with DBS1 , which exhibits predominantly CC>TT mutations and also with ID13 , which is predominantly characterised by T deletions at TT dinucleotides.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS7c at https://cancer.sanger.ac.uk/signatures/sbs/sbs7c
+📄 Saved SBS7c page as SBS7c.html
+SBS7c Aetiology: SBS7a / SBS7b /SBS7c/ SBS7d are found in cancers of the skin from sun exposed areas and are likely to be due to exposure to ultraviolet light. SBS7c is possibly the consequence of translesion DNA synthesis by enzymes with propensity to insert T, rather than A, opposite ultraviolet induced thymidine and cytidine photodimers. The preponderance of T>A rather than T>C mutations may reflect the heavier burden of thymidine compared to cytidine dimers induced by UV light.
+
+SBS7c Second Aetiology: UV light exposure
+
+SBS7c Associated Signatures: SBS7c is associated with SBS7a / SBS7b / SBS7d and these signatures are commonly found in the same samples.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS8 at https://cancer.sanger.ac.uk/signatures/sbs/sbs8
+📄 Saved SBS8 page as SBS8.html
+SBS8 Aetiology: Unknown.
+
+SBS8 Second Aetiology: HR deficiency / NER deficiency
+
+SBS8 Associated Signatures: SBS8 is associated with CC>AA mutations.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS84 at https://cancer.sanger.ac.uk/signatures/sbs/sbs84
+📄 Saved SBS84 page as SBS84.html
+SBS84 Aetiology: Activity of activation-induced cytidine deaminase (AID). 
+***Comments: SBS84 is found in clustered mutations in the immunoglobulin gene and other regions in lymphoid cancers.
+
+SBS84 Second Aetiology: AID activity
+
+SBS84 Associated Signatures: Associated with SBS85 .
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS85 at https://cancer.sanger.ac.uk/signatures/sbs/sbs85
+📄 Saved SBS85 page as SBS85.html
+SBS85 Aetiology: Indirect effects of activation-induced cytidine deaminase (AID) induced somatic mutagenesis in lymphoid cells. 
+***Comments: SBS85 is found in clustered mutations in the immunoglobulin gene and other regions in lymphoid cancers.
+
+SBS85 Second Aetiology: AID activity
+
+SBS85 Associated Signatures: Associated with SBS84 .
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS87 at https://cancer.sanger.ac.uk/signatures/sbs/sbs87
+📄 Saved SBS87 page as SBS87.html
+SBS87 Aetiology: Thiopurine chemotherapy treatment, experimentally validated.
+
+SBS87 Second Aetiology: Thiopurine chemotherapy
+
+SBS87 Associated Signatures: Found in combination with SBS86 in some relapsed ALL patients. Associated with increased CG>NN doublet base substitutions.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS89 at https://cancer.sanger.ac.uk/signatures/sbs/sbs89
+📄 Saved SBS89 page as SBS89.html
+SBS89 Aetiology: Unknown. 
+***Comments: SBS89 appears to be most active in the first decade of life.
+
+SBS89 Second Aetiology: Unknown
+
+SBS89 Associated Signatures: SBS89 correlates with DBS8 , suggesting that they are due to the same underlying mutational process.
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS9 at https://cancer.sanger.ac.uk/signatures/sbs/sbs9
+📄 Saved SBS9 page as SBS9.html
+SBS9 Aetiology: May be due in part to mutations induced during replication by polymerase eta as part of somatic hypermutation in lymphoid cells. 
+***Comments: Chronic lymphocytic leukaemias that possess immunoglobulin gene hypermutation (IGHV-mutated) have elevated numbers of mutations attributed to SBS9 compared to those that do not have immunoglobulin gene hypermutation.
+
+SBS9 Second Aetiology: Polymerase eta somatic hypermutation
+
+SBS9 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS90 at https://cancer.sanger.ac.uk/signatures/sbs/sbs90
+📄 Saved SBS90 page as SBS90.html
+SBS90 Aetiology: Duocarmycin exposure. 
+***Comments: Very strong sequence context enrichment, with a preference for thymines up to 4bp 3’ of mutated thymines.
+
+SBS90 Second Aetiology: Duocarmycin exposure
+
+SBS90 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------
+✅ Found SBS91 at https://cancer.sanger.ac.uk/signatures/sbs/sbs91
+📄 Saved SBS91 page as SBS91.html
+SBS91 Aetiology: Unknown. 
+***Comments: Distinctive extended sequence context. Enrichment in ALU elements.
+
+SBS91 Second Aetiology: Unknown
+
+SBS91 Associated Signatures: Unknown
+
+------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,20 @@
+SBS44 Associated Signatures: ID1 ID2 SBS44
+SBS13 Associated Signatures: DBS11 SBS13 SBS2
+SBS84 Associated Signatures:  SBS85
+SBS87 Associated Signatures:  SBS86
+SBS7b Associated Signatures: DBS1 ID13 SBS7a SBS7b SBS7c SBS7d
+SBS28 Associated Signatures:  SBS10a SBS10b SBS28
+SBS3 Associated Signatures: CN17 DBS13 ID6 SV3 
+SBS17b Associated Signatures:  SBS17a SBS17b
+SBS10d Associated Signatures: ID1 SBS10c
+SBS10b Associated Signatures: DBS3 SBS10a SBS10b SBS28
+SBS85 Associated Signatures:  SBS84
+SBS10a Associated Signatures: DBS3 SBS10a SBS10b SBS28
+SBS1 Associated Signatures:  SBS1 SBS5
+SBS8 Associated Signatures:  SBS8
+SBS7c Associated Signatures:  SBS7a SBS7b SBS7c SBS7d
+SBS6 Associated Signatures: ID1 ID2 SBS6
+SBS26 Associated Signatures: ID1 ID2 SBS26
+SBS2 Associated Signatures: DBS11 SBS13 SBS2
+SBS89 Associated Signatures: DBS8 SBS89
+SBS17a Associated Signatures:  SBS17a SBS17b
