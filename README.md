@@ -72,6 +72,12 @@ To run OncoSignTrack, use the following command-line options:
 
 ```bash
 ./OncoSignTrack_pipeline.sh -h
+ -d, -D, --directory <path>         Specify the destination folder containing VCF files. (Required)
+  -f, -F, --allele-frequency <value> Set the allele frequency threshold. (Optional)
+  -b, -B, --bed-file <file>          Specify the BED file to exclude shared variants. (Optional)
+  -v, -V, --visualize                Generate graphs to compare mutational signatures among samples. (Optional)
+  -e, -E, --etiology                 Extract mutational signature etiology from the COSMIC database. (Optional)
+  -h, -H, --help                     Display this help message.
 ```
 ## License
 
