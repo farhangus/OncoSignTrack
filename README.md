@@ -47,7 +47,7 @@ conda install -c bioconda bedtools
 R -e "install.packages(c('ggplot2', 'BiocManager', 'vcfR', 'VariantAnnotation'))"
 R -e "BiocManager::install(c('BSgenome.Hsapiens.NCBI.GRCh38', 'MutationalPatterns'))"
 
-
+```
 ## License
 
 OncoSignTrack is licensed under the Apache License, Version 2.0.
