@@ -66,7 +66,13 @@ R -e "install.packages(c('ggplot2', 'BiocManager', 'vcfR', 'VariantAnnotation'))
 R -e "BiocManager::install(c('BSgenome.Hsapiens.NCBI.GRCh38', 'MutationalPatterns'))"
 
 ```
+## Usage
 
+To run OncoSignTrack, use the following command-line options:
+
+```bash
+./OncoSignTrack_pipeline.sh -h
+```
 ## License
 
 OncoSignTrack is licensed under the Apache License, Version 2.0.
