@@ -39,15 +39,34 @@ The pipeline is optimized for **reproducibility** and **scientific rigor**, with
 
 ## Installation
 
-To run OncoSignTrack, install the required dependencies:
+To ensure a smooth installation of **OncoSignTrack**, follow the steps below to set up a dedicated environment and install all required dependencies.
 
 ```bash
+# 1. Set up a Conda/Mamba environment
+# Using Conda:
+conda create -n oncosigntrack_env python=3.9 -y
+conda activate oncosigntrack_env
+
+# OR Using Mamba (faster alternative to Conda):
+mamba create -n oncosigntrack_env python=3.9 -y
+mamba activate oncosigntrack_env
+
+# 2. Install Python dependencies
 pip install numpy pandas matplotlib seaborn
+
+# 3. Install Bedtools
 conda install -c bioconda bedtools
+
+# 4. Install R and required packages
+# If R is not installed, install it first using Conda:
+conda install -c conda-forge r-base
+
+# Install required R packages
 R -e "install.packages(c('ggplot2', 'BiocManager', 'vcfR', 'VariantAnnotation'))"
 R -e "BiocManager::install(c('BSgenome.Hsapiens.NCBI.GRCh38', 'MutationalPatterns'))"
 
-```
+
+
 ## License
 
 OncoSignTrack is licensed under the Apache License, Version 2.0.
