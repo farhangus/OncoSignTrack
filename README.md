@@ -65,7 +65,7 @@ conda install -c conda-forge r-base
 R -e "install.packages(c('ggplot2', 'BiocManager', 'vcfR', 'VariantAnnotation'))"
 R -e "BiocManager::install(c('BSgenome.Hsapiens.NCBI.GRCh38', 'MutationalPatterns'))"
 
-
+```
 
 ## License
 
