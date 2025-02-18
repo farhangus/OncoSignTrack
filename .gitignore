@@ -1,8 +1,7 @@
+# Ignore everything
 *
-!Plot_analysis_generator/
-!Plot_analysis_generator/**
-!Heatmap_generator/
-!Heatmap_generator/**
-Python_code_to_get_ateiologies_automated/
-!OncoSignTrack_pipeline.sh
+
+# But do not ignore .gitignore and README.md
+!.gitignore
 !README.md
+*
