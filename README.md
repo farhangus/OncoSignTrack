@@ -14,7 +14,9 @@ OncoSignTrack is implemented using **Python, R, and Bash**, leveraging the stren
 - **R:** Used for **genomic data wrangling and analysis**.
   - **Required packages:** `ggplot2`, `BiocManager`, `BSgenome.Hsapiens.NCBI.GRCh38`, `MutationalPatterns`, `vcfR`, `VariantAnnotation`
 - **Bash:** Controls the execution of different components.
-- **bedtools:** Used to **filter shared variants** and **exclude common variations** based on user-defined allele frequency thresholds.
+- **bedtools:** Used to **filter shared variants** and **exclude common variations** based on user-defined allele frequency 
+thresholds.
+
 
 The pipeline is optimized for **reproducibility** and **scientific rigor**, with built-in **error handling** that detects, logs, and resolves issues at each stage, ensuring streamlined genomic data analysis.
 
@@ -89,7 +91,7 @@ Here are some examples of a mutational signature visualization in OncoSignTrack 
 ![sample of boxplot](images/box_plot_.png)
 
 ## Example of a Log File Generated for Extracting the Required SBS Information from the COSMIC Dataset
-<small><small>
+<small><small><small><small><small><small>
 ✅ Found SBS1 at https://cancer.sanger.ac.uk/signatures/sbs/sbs1
 📄 Saved SBS1 page as SBS1.html
 SBS1 Aetiology: An endogenous mutational process initiated by spontaneous or enzymatic deamination of 5-methylcytosine to thymine which generates G:T mismatches in double stranded DNA. Failure to detect and remove these mismatches prior to DNA replication results in fixation of the T substitution for C. 
@@ -212,7 +214,9 @@ SBS89 Second Aetiology: Unknown
 SBS89 Associated Signatures: SBS89 correlates with DBS8 , suggesting that they are due to the same underlying mutational process.
 
 ------------------------------------------------------------------------------------------------------------------------
-</small></small>
+</small></small></small></small></small></small>
+
+
 
 ## License
 
