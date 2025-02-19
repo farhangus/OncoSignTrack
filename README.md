@@ -89,7 +89,7 @@ Here are some examples of a mutational signature visualization in OncoSignTrack 
 ![sample of boxplot](images/box_plot_.png)
 
 ## Example of a Log File Generated for Extracting the Required SBS Information from the COSMIC Dataset
-✅ Found SBS1 at https://cancer.sanger.ac.uk/signatures/sbs/sbs1
+<small>✅ Found SBS1 at https://cancer.sanger.ac.uk/signatures/sbs/sbs1
 📄 Saved SBS1 page as SBS1.html
 SBS1 Aetiology: An endogenous mutational process initiated by spontaneous or enzymatic deamination of 5-methylcytosine to thymine which generates G:T mismatches in double stranded DNA. Failure to detect and remove these mismatches prior to DNA replication results in fixation of the T substitution for C. 
 ***Comments: Signature SBS1 is clock-like in that the number of mutations in most cancers and normal cells correlates with the age of the individual. Rates of acquisition of Signature SBS1 mutations over time differ markedly between different cancer types and different normal cell types. These differences correlate with estimated rates of stem cell division in different tissues and Signature SBS1 may therefore be a cell division/mitotic clock.
@@ -205,7 +205,7 @@ SBS89 Second Aetiology: Unknown
 SBS89 Associated Signatures: SBS89 correlates with DBS8 , suggesting that they are due to the same underlying mutational process.
 
 ------------------------------------------------------------------------------------------------------------------------
-
+<small>
 ## License
 
 OncoSignTrack is licensed under the Apache License, Version 2.0.
