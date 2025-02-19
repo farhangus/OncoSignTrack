@@ -38,6 +38,8 @@ The pipeline is optimized for **reproducibility** and **scientific rigor**, with
 - **COSMIC annotation integration**: Retrieves and organizes **mutational signatures** based on **COSMIC database**.
 - **Visualization tools**: Generates **heatmaps, stacked bar charts, and boxplots** for easy interpretation.
 - **Scalability**: Supports **large-scale genomic studies**, ensuring reproducible analysis.
+- **bcftools:** Used to **read the allele depth (AD) from VCF files and recalculate the real allele frequency (AF)**, ensuring more accurate variant calling and filtering.  
+
 
 ## Installation
 
