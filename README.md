@@ -82,12 +82,10 @@ To run OncoSignTrack, use the following command-line options:
 
 ## Example Visualization
 
-Here is an example of a mutational signature visualization:
+Here are some examples of a mutational signature visualization in OncoSignTrack pipeline:
 ![sample of heatmap comapring SBS among samples_1](images/heatmap_samples_with_counts.png)
 ![sample of barplot for all SBSs](images/sbs_stacked_percentage_barplot_adjusted.png)
-
 ![sample of barplot for top10 SBSs](images/top_10_sbs_with_percentages.png)
-
 ![sample of boxplot](images/box_plot_.png)
 
 ## License
