@@ -93,6 +93,7 @@ Here are some examples of a mutational signature visualization in OncoSignTrack 
 ✅ Found SBS1 at https://cancer.sanger.ac.uk/signatures/sbs/sbs1
 📄 Saved SBS1 page as SBS1.html
 SBS1 Aetiology: An endogenous mutational process initiated by spontaneous or enzymatic deamination of 5-methylcytosine to thymine which generates G:T mismatches in double stranded DNA. Failure to detect and remove these mismatches prior to DNA replication results in fixation of the T substitution for C. 
+
 ***Comments: Signature SBS1 is clock-like in that the number of mutations in most cancers and normal cells correlates with the age of the individual. Rates of acquisition of Signature SBS1 mutations over time differ markedly between different cancer types and different normal cell types. These differences correlate with estimated rates of stem cell division in different tissues and Signature SBS1 may therefore be a cell division/mitotic clock.
 
 SBS1 Second Aetiology: Spontaneous deamination of 5-methylcytosine
@@ -112,6 +113,7 @@ SBS22 Associated Signatures: Unknown
 ✅ Found SBS25 at https://cancer.sanger.ac.uk/signatures/sbs/sbs25
 📄 Saved SBS25 page as SBS25.html
 SBS25 Aetiology: Unknown. However, some Hodgkin’s cell line samples in which the signature has been found were from patients exposed to chemotherapy and it is possible that SBS25 is due to chemotherapy treatment. 
+
 ***Comments: This signature has only been identified in Hodgkin’s cell lines. Data is not available from primary Hodgkin lymphomas.
 
 SBS25 Second Aetiology: Unknown chemotherapy
@@ -132,6 +134,7 @@ SBS26 Associated Signatures: SBS26 is associated ID1 and ID2 .
 ✅ Found SBS3 at https://cancer.sanger.ac.uk/signatures/sbs/sbs3
 📄 Saved SBS3 page as SBS3.html
 SBS3 Aetiology: Defective homologous recombination-based DNA damage repair which manifests predominantly as small indels and genome rearrangements due to abnormal double strand break repair but also in the form of this base substitution signature. 
+
 ***Comments: SBS3 is strongly associated with germline and somatic BRCA1 and BRCA2 mutations and BRCA1 promoter methylation in breast, pancreatic, and ovarian cancers. In pancreatic cancer, responders to platinum therapy usually exhibit SBS3 mutations. Together with associated indel and rearrangement signatures, SBS3 has been proposed as a predictor of defective homologous recombination-based repair and thus of response to therapies exploiting this repair defect.
 
 SBS3 Second Aetiology: HR deficiency
@@ -160,6 +163,7 @@ SBS37 Associated Signatures: Unknown
 ✅ Found SBS40 at https://cancer.sanger.ac.uk/signatures/sbs/sbs40
 📄 Saved SBS40 page as SBS40.html
 SBS40 Aetiology: Unknown. 
+
 ***Comments: Numbers of mutations attributed to SBS40 are correlated with patients’ ages for some types of human cancer.
 
 SBS40 Second Aetiology: Unknown
@@ -189,6 +193,7 @@ SBS55 Associated Signatures: Unknown
 ✅ Found SBS85 at https://cancer.sanger.ac.uk/signatures/sbs/sbs85
 📄 Saved SBS85 page as SBS85.html
 SBS85 Aetiology: Indirect effects of activation-induced cytidine deaminase (AID) induced somatic mutagenesis in lymphoid cells. 
+
 ***Comments: SBS85 is found in clustered mutations in the immunoglobulin gene and other regions in lymphoid cancers.
 
 SBS85 Second Aetiology: AID activity
@@ -199,6 +204,7 @@ SBS85 Associated Signatures: Associated with SBS84 .
 ✅ Found SBS89 at https://cancer.sanger.ac.uk/signatures/sbs/sbs89
 📄 Saved SBS89 page as SBS89.html
 SBS89 Aetiology: Unknown. 
+
 ***Comments: SBS89 appears to be most active in the first decade of life.
 
 SBS89 Second Aetiology: Unknown
