@@ -185,6 +185,7 @@ SBS40 Associated Signatures: Unknown
 ------------------------------------------------------------------------------------------------------------------------
 ✅ Found SBS44 at https://cancer.sanger.ac.uk/signatures/sbs/sbs44
 📄 Saved SBS44 page as SBS44.html
+
 SBS44 Aetiology: Defective DNA mismatch repair. 
 ***Comments: SBS44 is one of seven mutational signatures associated with defective DNA mismatch repair and microsatellite instability (MSI) and is often found in the same samples as other MSI associated signatures: SBS6 , SBS14 , SBS15 , SBS20 , SBS21 , and SBS26 .
 
@@ -195,6 +196,7 @@ SBS44 Associated Signatures: SBS44 is associated with ID1 and ID2 .
 ------------------------------------------------------------------------------------------------------------------------
 ✅ Found SBS55 at https://cancer.sanger.ac.uk/signatures/sbs/sbs55
 📄 Saved SBS55 page as SBS55.html
+
 SBS55 Aetiology: Possible sequencing artefact.
 
 SBS55 Second Aetiology: Possible sequencing artifact
@@ -204,6 +206,7 @@ SBS55 Associated Signatures: Unknown
 ------------------------------------------------------------------------------------------------------------------------
 ✅ Found SBS85 at https://cancer.sanger.ac.uk/signatures/sbs/sbs85
 📄 Saved SBS85 page as SBS85.html
+
 SBS85 Aetiology: Indirect effects of activation-induced cytidine deaminase (AID) induced somatic mutagenesis in lymphoid cells. 
 
 ***Comments: SBS85 is found in clustered mutations in the immunoglobulin gene and other regions in lymphoid cancers.
@@ -215,6 +218,7 @@ SBS85 Associated Signatures: Associated with SBS84 .
 ------------------------------------------------------------------------------------------------------------------------
 ✅ Found SBS89 at https://cancer.sanger.ac.uk/signatures/sbs/sbs89
 📄 Saved SBS89 page as SBS89.html
+
 SBS89 Aetiology: Unknown. 
 
 ***Comments: SBS89 appears to be most active in the first decade of life.
