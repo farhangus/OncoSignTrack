@@ -205,7 +205,7 @@ SBS89 Second Aetiology: Unknown
 SBS89 Associated Signatures: SBS89 correlates with DBS8 , suggesting that they are due to the same underlying mutational process.
 
 ------------------------------------------------------------------------------------------------------------------------
-<small>
+</small>
 ## License
 
 OncoSignTrack is licensed under the Apache License, Version 2.0.
