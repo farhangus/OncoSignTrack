@@ -48,6 +48,10 @@ if (!file.exists(vcf_file)) {
 
 print(paste("Processing VCF file:", vcf_file))
 
+# Extract only the filename and directory path
+vcf_filename <- basename(vcf_file)
+vcf_dir <- dirname(vcf_file)
+
 # Initialize a data frame to store results
 all_results <- data.frame(
   File = character(),
@@ -90,21 +94,23 @@ tryCatch({
   # Fit data to COSMIC signatures
   fit_res <- fit_to_signatures(mut_context, cosmic_signatures)
   
-  # Save the contribution data as a CSV
+  # Save the contribution data as a CSV in the same directory as the input file
   contributions <- as.data.frame(t(fit_res$contribution))
-  contributions$File <- vcf_file
+  contributions$File <- vcf_filename
   contributions <- reshape2::melt(contributions, id.vars = "File", variable.name = "Signature", value.name = "Contribution")
   
   # Add to cumulative results
   all_results <- rbind(all_results, contributions)
   
+  # Construct output file paths in the same directory as the input file
+  csv_output_file <- file.path(vcf_dir, gsub("\\.vcf(\\.gz)?$", "_mutational_signatures.csv", vcf_filename))
+  output_plot_file <- file.path(vcf_dir, gsub("\\.vcf(\\.gz)?$", "_mutational_signatures.png", vcf_filename))
+
   # Save contributions as a CSV file
-  csv_output_file <- gsub("\\.vcf(\\.gz)?$", "_mutational_signatures.csv", vcf_file)
   write.csv(contributions, csv_output_file, row.names = FALSE)
   print(paste("CSV saved to:", csv_output_file))
   
   # Visualize the contribution of signatures and save the plot
-  output_plot_file <- gsub("\\.vcf(\\.gz)?$", "_mutational_signatures.png", vcf_file)
   contribution_plot <- plot_contribution(fit_res$contribution, cosmic_signatures, mode = "absolute")
   
   # Save the plot
@@ -112,7 +118,6 @@ tryCatch({
   print(paste("Plot saved to:", output_plot_file))
 }, error = function(e) {
   # Handle errors gracefully
-  print(paste("Error processing file:", vcf_file))
+  print(paste("Error processing file:", vcf_filename))
   print(e)
 })
-

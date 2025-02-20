@@ -17,7 +17,7 @@ file_path = sys.argv[1]
 output_dir = os.path.dirname(file_path)
 
 # Prompt the user for the dataset name
-data_set_name = input("Enter the dataset name: ").strip()
+data_set_name = ""
 
 # Load the CSV file
 try:

@@ -15,7 +15,7 @@ VCF_DIR=$(dirname "$VCF_FILE")
 VCF_BASENAME=$(basename "$VCF_FILE" .vcf.gz)
 
 # Define output file name
-OUTPUT_VCF="${VCF_DIR}/${VCF_BASENAME}_filtered.vcf.gz"
+OUTPUT_VCF="${VCF_DIR}/${VCF_BASENAME}_non_common.vcf.gz"
 
 # Create a temporary header file
 HEADER_TMP=$(mktemp)
@@ -30,7 +30,7 @@ bedtools subtract -A -a "$VCF_FILE" -b "$BED_FILE" | grep -v "^#" > "${VCF_BASEN
 cat "$HEADER_TMP" "${VCF_BASENAME}_filtered_body.vcf" | bgzip -c > "$OUTPUT_VCF"
 
 # Index the new VCF file
-tabix -p vcf "$OUTPUT_VCF"
+#tabix -p vcf "$OUTPUT_VCF"
 
 # Clean up temporary files
 rm -f "$HEADER_TMP" "${VCF_BASENAME}_filtered_body.vcf"

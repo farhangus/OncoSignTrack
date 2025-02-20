@@ -61,29 +61,103 @@ echo "Processing VCF files in: $DEST_DIR"
 [[ "$EXTRACT_ETY" == true ]] && echo "Etiology extraction enabled: Fetching COSMIC mutation signature details."
 
 # Step 1: Filtering variants
-echo "Step 1: Filtering variants..."
-# Add command to filter VCF files
+if [[ -n "$BED_FILE" ]]; then
+    echo "Filtering variants..."
+    for file in "$DEST_DIR"/*.gz;
+    do
+        echo "$file"
+        bash Plot_analysis_generator/filter_vcf_non_common.sh "$file" "$BED_FILE"
+    done
+fi
+
+if [[ -n "$ALLELE_FREQ" ]]; then
+    if [[ -z "$BED_FILE" ]]
+    then
+    echo "Filtering variants by AF..."
+    for file in "$DEST_DIR"/*.gz;
+    do
+        bash Plot_analysis_generator/filter_vcf_by_af.sh "$file" "$ALLELE_FREQ"
+    done
+    fi
+    if [[ -n "$BED_FILE" ]]
+    then
+    echo "Filtering variants by AF..."
+    for file in "$DEST_DIR"/*non_common*.gz;
+    do
+        bash Plot_analysis_generator/filter_vcf_by_af.sh "$file" "$ALLELE_FREQ"
+    done
+    fi
+    
+fi
 
 # Step 2: Calculating mutational signatures
-echo "Step 2: Calculating mutational signatures..."
-# Add command to calculate mutational signatures
+
+echo "Calculating mutational signatures..."
+if [[ -z "$ALLELE_FREQ" && -z "$BED_FILE" ]]
+then 
+for file in "$DEST_DIR"/*.gz; do
+    echo "Processing: $file"
+    Rscript Plot_analysis_generator/mutational_analysis_single_file.R "$file"
+done
+fi
+
+if [[ -n "$ALLELE_FREQ" && -z "$BED_FILE" ]]
+then
+for file in "$DEST_DIR"/AF*.gz; do
+ echo "Processing: $file"
+    Rscript Plot_analysis_generator/mutational_analysis_single_file.R "$file"
+done
+fi
+
+if [[ -z "$ALLELE_FREQ" && -n "$BED_FILE" ]]
+then
+for file in "$DEST_DIR"/*non_common*.gz; do
+ echo "Processing: $file"
+    Rscript Plot_analysis_generator/mutational_analysis_single_file.R "$file"
+done
+fi
+
+if [[ -n "$ALLELE_FREQ" && -n "$BED_FILE" ]]
+then
+for file in "$DEST_DIR"/AF*non_common*.gz; do
+ echo "Processing: $file"
+    Rscript Plot_analysis_generator/mutational_analysis_single_file.R "$file"
+done
+fi
+
+echo "Mutational signature calculation completed."
 
 # Step 3: Extracting mutational signature etiology
 if [[ "$EXTRACT_ETY" == true ]]; then
     echo "Step 3: Extracting etiology from COSMIC..."
     # Add command to extract etiology from COSMIC
 fi
-
+# Step 4: Generating visualizations
 # Step 4: Generating visualizations
 if [[ "$VISUALIZE" == true ]]; then
+    tmpfile="$DEST_DIR/all.csv"
+    tmp_file_group="$DEST_DIR/group.csv"
+    echo "File,Signature,Contribution" > "$tmpfile"
     echo "Step 4: Generating visualizations..."
-    # Add visualization command
+    
+    shopt -s nullglob
+    for file in "$DEST_DIR"/*.csv; do
+        [[ "$file" == "$tmpfile" ]] && continue  # Skip the output file
+        grep -v -e "File" -e ",0" "$file" >> "$tmpfile"
+    done
+    shopt -u nullglob  # Restore default behavior
+    
+    if [[ -s "$tmpfile" ]]; then
+        python3 Plot_analysis_generator/generate_box_plot.py "$tmpfile"
+        python3 Plot_analysis_generator/bar_plot_generator.py "$tmpfile"
+        python3 Plot_analysis_generator/sbs_scaled_barplot_10_top.py 
+        sed -i 's/"//g' "$tmpfile"
+        bash Plot_analysis_generator/generate_report_grouped_by_SBS.sh "$tmpfile"> "$tmp_file_group"
+        python3 Plot_analysis_generator/heat_map_table_generator.py "$tmp_file_group"
+    else
+        echo "No data to visualize. Skipping plot generation."
+    fi
+    rm $tmpfile
+    rm "$tmp_file_group"
 fi
-
-# Step 5: Saving mutational signature contributions
-echo "Step 5: Saving mutational signature contributions in CSV files..."
-# Add command to generate CSV files
-
 echo "Pipeline completed successfully! Results are stored in: $DEST_DIR"
-
-
