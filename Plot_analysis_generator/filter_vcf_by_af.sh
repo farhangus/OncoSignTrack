@@ -52,7 +52,7 @@ awk -v af_threshold="$af_threshold" 'BEGIN { OFS="\t" }
 }' > "$temp_positions_file"
 
 # Define filtered VCF output file name
-output_vcf="$input_dir/AF_Less_${af_threshold}_${input_base}"
+output_vcf="$input_dir/AF_${af_threshold}_${input_base}"
 
 # Use the extracted positions to filter the original VCF
 if [ -s "$temp_positions_file" ]; then

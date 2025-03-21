@@ -27,7 +27,7 @@ min_value = data[data > 0].min().min()  # Smallest non-zero value
 max_value = data.max().max()  # Largest value
 
 # Generate size values for the legend proportionally between min_value and max_value
-size_values = np.linspace(min_value, max_value, 5)  # Adjust the number of legend circles (5 here)
+size_values = np.linspace(min_value, max_value, 10)  # Adjust the number of legend circles (5 here)
 
 # Create labels for the legend (only values)
 size_labels = [f"{round(size)}" for size in size_values]
@@ -46,7 +46,7 @@ for i in range(data.shape[0]):
     for j in range(data.shape[1]):
         value = data.iloc[i, j]
         if value > 0:  # Only plot for non-zero values
-            circle_size = (value / max_value) * 250
+            circle_size = (value / max_value) * 450
             ax.scatter(
                 j, i, s=circle_size, c=plt.cm.coolwarm(value / max_value), alpha=0.8, edgecolors="black"
             )
@@ -92,7 +92,7 @@ fig_legend, ax_legend = plt.subplots(figsize=(4, 4))
 size_handles = [
     ax_legend.scatter(
         [], [],
-        s=(size / max_value) * 250,
+        s=(size / max_value) * 200,
         color=plt.cm.coolwarm(size / max_value),
         alpha=0.8,
         edgecolors="black"

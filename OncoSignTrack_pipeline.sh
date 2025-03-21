@@ -150,7 +150,7 @@ if [[ "$VISUALIZE" == true ]]; then
     if [[ -s "$tmpfile" ]]; then
         python3 Plot_analysis_generator/generate_box_plot.py "$tmpfile"
         python3 Plot_analysis_generator/bar_plot_generator.py "$tmpfile"
-        python3 Plot_analysis_generator/sbs_scaled_barplot_10_top.py 
+        python3 Plot_analysis_generator/sbs_scaled_barplot_10_top.py  "$tmpfile"
         sed -i 's/"//g' "$tmpfile"
         bash Plot_analysis_generator/generate_report_grouped_by_SBS.sh "$tmpfile"> "$tmp_file_group"
         python3 Plot_analysis_generator/heat_map_table_generator.py "$tmp_file_group"
@@ -160,4 +160,33 @@ if [[ "$VISUALIZE" == true ]]; then
     rm $tmpfile
     rm "$tmp_file_group"
 fi
+
+if [[ "$EXTRACT_ETY" == true ]]; then
+    tmpfile="$DEST_DIR/all.csv"
+    tmp_sbs_list="$DEST_DIR/sbs.txt"
+    sbs_log="$DEST_DIR/sbs_ety.log"
+    shopt -s nullglob
+
+    for file in "$DEST_DIR"/*.csv; do
+        [[ "$file" == "$tmpfile" ]] && continue  # Skip the output file
+        grep -v -e "File" -e ",0" "$file" >> "$tmpfile"
+    done
+
+    # Debugging step: Check if the file exists before processing
+    if [[ ! -f "$tmpfile" ]]; then
+        echo "Error: Expected file $tmpfile not found!" >&2
+        exit 1
+    fi
+
+    cat "$tmpfile" | cut -d , -f 2 | tr -d '\"' | sort | uniq > "$tmp_sbs_list"
+    shopt -u nullglob  # Restore default behavior
+
+    # Run the Python script and save the log
+    python3 Plot_analysis_generator/Proposed_Aetiology_extractor.py -l "$tmp_sbs_list" > "$sbs_log"
+
+    # Clean up temporary files safely
+    rm "$tmpfile"
+    rm "$tmp_sbs_list"
+fi
+
 echo "Pipeline completed successfully! Results are stored in: $DEST_DIR"

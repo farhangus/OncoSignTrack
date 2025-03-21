@@ -22,6 +22,9 @@ except Exception as e:
 # Ensure columns are correct
 data.columns = ['Sample', 'Signature', 'Contribution']
 
+# Remove ".vcf.gz" from Sample names
+data['Sample'] = data['Sample'].str.replace(r'\.vcf\.gz$', '', regex=True)
+
 # Calculate total contribution for each sample to normalize contributions
 data['Contribution'] = data.groupby('Sample')['Contribution'].transform(lambda x: (x / x.sum()) * 100)
 

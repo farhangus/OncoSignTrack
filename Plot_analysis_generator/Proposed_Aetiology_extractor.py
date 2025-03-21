@@ -4,7 +4,7 @@ import argparse
 import os
 
 class SBSScraper:
-    """Class to fetch SBS aetiologies and save HTML pages."""
+    """Class to fetch SBS aetiologies without saving HTML pages."""
 
     BASE_URL = "https://cancer.sanger.ac.uk/signatures/sbs/{}"
 
@@ -18,10 +18,9 @@ class SBSScraper:
             return [line.strip() for line in file.readlines() if line.strip()]
 
     @staticmethod
-    def extract_aetiology_from_html(filename):
+    def extract_aetiology_from_html(html_content):
         """Extracts aetiology from the 'Proposed aetiology' section before 'Acceptance criteria'."""
-        with open(filename, "r", encoding="utf-8") as file:
-            soup = BeautifulSoup(file, "html.parser")
+        soup = BeautifulSoup(html_content, "html.parser")
 
         start = soup.find(lambda tag: tag.name in ["h3", "h2"] and "Proposed aetiology" in tag.text)
         end = soup.find(lambda tag: tag.name in ["h3", "h2"] and "Acceptance criteria" in tag.text)
@@ -41,10 +40,9 @@ class SBSScraper:
         return "Unknown"
     
     @staticmethod
-    def extract_associated_signatures_from_html(filename):
+    def extract_associated_signatures_from_html(html_content):
         """Extracts associated signatures between 'Associated signatures' and 'Replication timing'."""
-        with open(filename, "r", encoding="utf-8") as file:
-            soup = BeautifulSoup(file, "html.parser")
+        soup = BeautifulSoup(html_content, "html.parser")
 
         start = soup.find(lambda tag: tag.name in ["h3", "h2"] and "Associated signatures" in tag.text)
         end = soup.find(lambda tag: tag.name in ["h3", "h2"] and "Replication timing" in tag.text)
@@ -61,27 +59,30 @@ class SBSScraper:
         return "Unknown"
     
     def fetch_aetiology(self, sbs):
-        """Fetches SBS signature aetiology and saves the HTML file."""
+        """Fetches SBS signature aetiology but does not save the HTML file."""
         url = self.BASE_URL.format(sbs.lower())
         response = requests.get(url)
 
         if response.status_code == 200:
             print(f"✅ Found {sbs} at {url}")
 
-            # Save the HTML page
-            filename = f"{sbs}.html"
-            with open(filename, "w", encoding="utf-8") as file:
-                file.write(response.text)
-            print(f"📄 Saved {sbs} page as {filename}")
+            # Store HTML content in memory instead of saving it
+            html_content = response.text
+
+            # Commenting out the file saving process
+            # filename = os.path.join(self.sbs_list_dir, f"{sbs}.html")
+            # with open(filename, "w", encoding="utf-8") as file:
+            #     file.write(html_content)
+            # print(f"📄 Saved {sbs} page as {filename}")
 
             # Extract aetiology
-            aetiology = self.extract_aetiology_from_html(filename)
+            aetiology = self.extract_aetiology_from_html(html_content)
 
             # Extract associated signatures
-            associated_signatures = self.extract_associated_signatures_from_html(filename)
+            associated_signatures = self.extract_associated_signatures_from_html(html_content)
 
             # Extract full aetiology (Associated Aetiology)
-            soup = BeautifulSoup(response.text, "html.parser")
+            soup = BeautifulSoup(html_content, "html.parser")
             aetiology_td = soup.find("td", {"headers": "aet1"})
             associated_aetiology = aetiology_td.get_text(separator=" ", strip=True) if aetiology_td else "Unknown"
 
@@ -100,7 +101,7 @@ class SBSScraper:
 
 # Main execution
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Fetch SBS aetiologies and save HTML pages.")
+    parser = argparse.ArgumentParser(description="Fetch SBS aetiologies without saving HTML pages.")
     parser.add_argument("-l", "--list", required=True, help="Path to the text file containing SBS signatures (one per line).")
     args = parser.parse_args()
 

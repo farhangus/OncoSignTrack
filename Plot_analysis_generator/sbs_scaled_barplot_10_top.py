@@ -23,6 +23,9 @@ except Exception as e:
 data = pd.read_csv(file_path, usecols=[0, 1, 2])
 data.columns = ['Sample', 'Signature', 'Contribution']
 
+# Remove ".vcf.gz" from Sample names
+data['Sample'] = data['Sample'].str.replace(r'\.vcf\.gz$', '', regex=True)
+
 # Normalize contributions within each sample
 data['Contribution'] = data.groupby('Sample')['Contribution'].transform(lambda x: (x / x.sum()) * 100)
 
