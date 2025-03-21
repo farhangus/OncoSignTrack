@@ -8,5 +8,6 @@
 # Do not ignore files inside the images folder
 !images/
 !images/*
+
 !Plot_analysis_generator/
 !Plot_analysis_generator/*
