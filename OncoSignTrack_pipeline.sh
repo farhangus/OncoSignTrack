@@ -157,8 +157,8 @@ if [[ "$VISUALIZE" == true ]]; then
     else
         echo "No data to visualize. Skipping plot generation."
     fi
-    rm $tmpfile
-    rm "$tmp_file_group"
+    #rm $tmpfile
+    #rm "$tmp_file_group"
 fi
 
 if [[ "$EXTRACT_ETY" == true ]]; then
@@ -185,8 +185,8 @@ if [[ "$EXTRACT_ETY" == true ]]; then
     python3 Plot_analysis_generator/Proposed_Aetiology_extractor.py -l "$tmp_sbs_list" > "$sbs_log"
 
     # Clean up temporary files safely
-    rm "$tmpfile"
-    rm "$tmp_sbs_list"
+    #rm "$tmpfile"
+    #rm "$tmp_sbs_list"
 fi
 
 echo "Pipeline completed successfully! Results are stored in: $DEST_DIR"

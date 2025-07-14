@@ -22,34 +22,40 @@ data = data.replace("X", 1).replace("", 0).astype(float)
 # Calculate occurrence counts for each column
 occurrence_counts = (data > 0).sum(axis=0)
 
-# Calculate the minimum and maximum values in the data for scaling
-min_value = data[data > 0].min().min()  # Smallest non-zero value
-max_value = data.max().max()  # Largest value
+# Calculate the min and max values for scaling
+min_value = data[data > 0].min().min()
+max_value = data.max().max()
 
-# Generate size values for the legend proportionally between min_value and max_value
-size_values = np.linspace(min_value, max_value, 10)  # Adjust the number of legend circles (5 here)
-
-# Create labels for the legend (only values)
+# Create proportional sizes for legend
+size_values = np.linspace(min_value, max_value, 5)
 size_labels = [f"{round(size)}" for size in size_values]
 
-# Set up the figure for the main heatmap
+# Create heatmap figure
 fig, ax = plt.subplots(figsize=(20, 12))
 
-# Plot grid lines
+# Add background shading for sample groups
+ax.axvspan(-0.5, 21.5, facecolor='lightcoral', alpha=0.15)  # First group: samples 0-21
+ax.axvspan(21.5, data.shape[1] - 0.5, facecolor='lightblue', alpha=0.15)  # Second group: samples 22+
+
+# Add minor grid lines
 ax.set_xticks(np.arange(-0.5, data.shape[1], 1), minor=True)
 ax.set_yticks(np.arange(-0.5, data.shape[0], 1), minor=True)
 ax.grid(which="minor", color="gray", linestyle="-", linewidth=0.5)
 ax.tick_params(which="minor", bottom=False, left=False)
 
-# Plot circles representing values
+# Plot each non-zero cell as a circle
 for i in range(data.shape[0]):
     for j in range(data.shape[1]):
         value = data.iloc[i, j]
-        if value > 0:  # Only plot for non-zero values
-            circle_size = (value / max_value) * 150
+        if value > 0:
+            circle_size = (value / max_value) * 650
             ax.scatter(
-                j, i, s=circle_size, c=plt.cm.coolwarm(value / max_value), alpha=0.8, edgecolors="black"
+                j, i, s=circle_size, c=plt.cm.coolwarm(value / max_value),
+                alpha=0.8, edgecolors="black"
             )
+
+# Add vertical separator line after 22nd sample
+ax.axvline(x=21.5, color='black', linestyle='--', linewidth=2)
 
 # Customize axis labels
 ax.set_xticks(range(data.shape[1]))
@@ -57,63 +63,49 @@ ax.set_xticklabels(data.columns, rotation=90, fontsize=8)
 ax.set_yticks(range(data.shape[0]))
 ax.set_yticklabels(data.index, fontsize=8)
 
-# Move x-axis labels to the top
+# Move x-axis labels to top
 ax.xaxis.set_ticks_position("top")
 ax.xaxis.set_label_position("top")
-
-# Add axis titles
 ax.set_ylabel("Mutational Signatures (SBS)", fontsize=14)
 
-# Add the number of SBS occurrences below each sample on the x-axis
+# Add SBS occurrence counts below x-axis
 for j, count in enumerate(occurrence_counts):
     ax.text(j, data.shape[0], f"{count}", ha="center", va="center", fontsize=8, color="black", rotation=90)
 
-# Adjust the x-axis range to fit the counts below
+# Adjust plot limits
 ax.set_xlim(-0.5, data.shape[1] - 0.5)
 ax.set_ylim(-0.5, data.shape[0] + 0.5)
 
-# Add a colorbar for circle colors
+# Add colorbar
 sm = plt.cm.ScalarMappable(cmap="coolwarm", norm=plt.Normalize(vmin=0, vmax=max_value))
 sm.set_array([])
 cbar = fig.colorbar(sm, ax=ax, orientation="vertical", label="Proportion Value", pad=0.05)
 
-# Tight layout to adjust spacing
 plt.tight_layout()
 
-# Save the main heatmap plot in the same directory as the input file
+# Save main heatmap
 heatmap_path = os.path.join(output_dir, 'heatmap_samples_with_counts.png')
 plt.savefig(heatmap_path)
 print(f"✅ Heatmap saved to: {heatmap_path}")
 
-# Create a separate figure for the circle size legend
-fig_legend, ax_legend = plt.subplots(figsize=(4, 4))
-
-# Create legend handles with scaled sizes and matching colors
+# Create circle size legend
+fig_legend, ax_legend = plt.subplots(figsize=(2, 4))
 size_handles = [
-    ax_legend.scatter(
-        [], [],
-        s=(size / max_value) * 200,
-        color=plt.cm.coolwarm(size / max_value),
-        alpha=0.8,
-        edgecolors="black"
-    )
+    ax_legend.scatter([], [], s=(size / max_value) * 350,
+                      color=plt.cm.coolwarm(size / max_value),
+                      alpha=0.8, edgecolors="black")
     for size in size_values
 ]
-
-# Add the legend to the separate figure
 ax_legend.legend(
-    size_handles,
-    size_labels,
-    loc="center",
-    title="Circle Size\n(Value)",
-    fontsize=10,
-    title_fontsize=10,
-    frameon=True,
-    shadow=False,
+    size_handles, size_labels,
+    loc="center", title="Circle Size\n(Value)",
+    fontsize=10, title_fontsize=10,
+    frameon=True, shadow=False,
+    labelspacing=.7, handletextpad=.01
 )
-ax_legend.axis("off")  # Hide axes for the legend figure
+ax_legend.axis("off")
 
-# Save the circle size legend as a separate image in the same directory as the input file
+# Save legend
 legend_path = os.path.join(output_dir, 'circle_size_legend_with_colors.png')
 plt.tight_layout()
 plt.savefig(legend_path)
