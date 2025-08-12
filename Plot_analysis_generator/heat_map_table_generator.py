@@ -12,6 +12,7 @@ output_dir = os.path.dirname(os.path.abspath(input_file))
 
 # Load your data into a DataFrame
 data = pd.read_csv(input_file, index_col=0)
+data = data.iloc[:, :20]  # Keep only the first 20 columns (samples)
 
 # Sort rows alphabetically by the index
 data = data.sort_index()
@@ -33,7 +34,7 @@ size_values = np.linspace(min_value, max_value, 10)  # Adjust the number of lege
 size_labels = [f"{round(size)}" for size in size_values]
 
 # Set up the figure for the main heatmap
-fig, ax = plt.subplots(figsize=(20, 12))
+fig, ax = plt.subplots(figsize=(20, 10))
 
 # Plot grid lines
 ax.set_xticks(np.arange(-0.5, data.shape[1], 1), minor=True)
@@ -46,7 +47,7 @@ for i in range(data.shape[0]):
     for j in range(data.shape[1]):
         value = data.iloc[i, j]
         if value > 0:  # Only plot for non-zero values
-            circle_size = (value / max_value) * 150
+            circle_size = (value / max_value) * 950
             ax.scatter(
                 j, i, s=circle_size, c=plt.cm.coolwarm(value / max_value), alpha=0.8, edgecolors="black"
             )
@@ -92,7 +93,7 @@ fig_legend, ax_legend = plt.subplots(figsize=(4, 4))
 size_handles = [
     ax_legend.scatter(
         [], [],
-        s=(size / max_value) * 200,
+        s=(size / max_value) * 450,
         color=plt.cm.coolwarm(size / max_value),
         alpha=0.8,
         edgecolors="black"
@@ -116,5 +117,5 @@ ax_legend.axis("off")  # Hide axes for the legend figure
 # Save the circle size legend as a separate image in the same directory as the input file
 legend_path = os.path.join(output_dir, 'circle_size_legend_with_colors.png')
 plt.tight_layout()
-plt.savefig(legend_path)
+plt.savefig(legend_path, dpi=800)
 print(f"✅ Legend saved to: {legend_path}")

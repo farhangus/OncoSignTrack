@@ -39,7 +39,7 @@ def main():
         similarity_df, 
         cmap="coolwarm", 
         method="ward", 
-        figsize=(12, 12), 
+        figsize=(24, 24), 
         annot=annotate,  # Enable annotation if --annotate is used
         fmt=".2f" if annotate else None,  # Format annotation values if enabled
         annot_kws={"size": 8} if annotate else None  # Set annotation text size

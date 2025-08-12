@@ -45,7 +45,7 @@ def main():
         for j in range(data.shape[1]):
             value = data.iloc[i, j]
             if value > 0:
-                circle_size = (value / max_value) * 150
+                circle_size = (value / max_value) * 250
                 ax.scatter(
                     j, i,
                     s=circle_size,

@@ -15,19 +15,17 @@ echo "Signature,$samples"
 # Generate the table with integer values from the Contribution column
 tail -n +2 "$input_file" | gawk -F',' '
 BEGIN {
-    # Initialize arrays
     split("'"$samples"'", sample_array, ",");
     for (i in sample_array) {
         samples[sample_array[i]] = sample_array[i];
     }
 }
 {
-    # Store the Contribution value instead of "X"
-    table[$2][$1] = $3;
+    # Convert Contribution to integer using int()
+    table[$2][$1] = int($3);
     signatures[$2] = $2;
 }
 END {
-    # Print the table
     for (sig in signatures) {
         printf "%s", sig;
         for (i in sample_array) {
@@ -37,4 +35,3 @@ END {
         print "";
     }
 }'
-
