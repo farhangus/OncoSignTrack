@@ -17,6 +17,7 @@ parser.add_argument("--sep", type=int, default=22, help="Column index to separat
 parser.add_argument("--scheme", type=str, default="plasma", help="Matplotlib colormap name (e.g. plasma, viridis, bwr)")
 parser.add_argument("--exclude", type=str, default="", help="Comma-separated SBS names to exclude (e.g., SBS5,SBS40 or 5,40)")
 parser.add_argument("--log", action="store_true", help="If set, apply log10(value+1) to data before plotting")
+parser.add_argument("--report", type=int, default=0, help="Report the SBS count per sample (0 = hide, 1 = show)")
 args = parser.parse_args()
 
 # --- Parameters ---
@@ -26,6 +27,7 @@ sort_sbs = args.sbs
 cell_size = args.cell_size * 100.0  # scale to scatter 's' units
 sep = args.sep - 0.5                # for plotting vline between groups
 colormap = plt.get_cmap(args.scheme)
+show_report = args.report == 1
 
 # --- File and Output Setup ---
 output_dir = os.path.dirname(os.path.abspath(input_file))
@@ -121,12 +123,14 @@ ax.xaxis.set_ticks_position("top")
 ax.xaxis.set_label_position("top")
 ax.set_ylabel("Mutational Signatures (SBS)", fontsize=14)
 
-# top counts per column (rotated)
-for j, count in enumerate(occurrence_counts):
-    ax.text(j, data.shape[0], f"{count}", ha="center", va="center", fontsize=8, color="black", rotation=90)
+# --- Optional SBS counts at the top ---
+if show_report:
+    print("ℹ️ Reporting SBS counts per sample above heatmap.")
+    for j, count in enumerate(occurrence_counts):
+        ax.text(j, data.shape[0], f"{count}", ha="center", va="center", fontsize=8, color="black", rotation=90)
 
 ax.set_xlim(-0.5, data.shape[1] - 0.5)
-ax.set_ylim(-0.5, data.shape[0] + 0.5)
+ax.set_ylim(-0.5, data.shape[0] + (0.5 if show_report else 0))
 
 # colorbar
 label = "Proportion Value (log10+1)" if args.log else "Proportion Value"
@@ -144,11 +148,23 @@ fig_legend, ax_legend = plt.subplots(figsize=(3, 3))
 handles = []
 for size in size_values:
     frac = size / max_value
-    h = ax_legend.scatter([], [], s=frac * cell_size, c=colormap(frac),
+    h = ax_legend.scatter([], [], s=frac * cell_size  *.5, c=colormap(frac),
                           alpha=0.8, edgecolors="black", linewidths=0.3)
     handles.append(h)
 
-ax_legend.legend(handles, size_labels, title="Circle Size\n(Value)", frameon=True, loc="center")
+legend = ax_legend.legend(
+    handles,
+    size_labels,
+    title="Circle Size\n(Value)",
+    frameon=True,
+    loc="center",
+    scatterpoints=1,
+    labelspacing=0.5,   # tighten vertical space
+    handletextpad=0.8,  # tighten text spacing
+    borderpad=0.5,      # reduce padding inside box
+    prop={'size': 8},   # smaller font
+    title_fontsize=9    # smaller title font
+)
 ax_legend.set_axis_off()
 legend_path = os.path.join(output_dir, "circle_size_legend.png")
 fig_legend.savefig(legend_path, bbox_inches="tight", dpi=300)

@@ -62,8 +62,8 @@ for i, patch_list in enumerate(bars.containers):
                 signature_name,
                 ha='center',
                 va='center',
-                fontsize=8,
-                rotation='horizontal',
+                fontsize=6,
+                rotation='vertical',
                 color='white'
             )
 
